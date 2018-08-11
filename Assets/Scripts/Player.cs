@@ -23,6 +23,13 @@ public class Player : MonoBehaviour {
         UpdatePosition();
 	}
 
+    private void OnTriggerEnter2D(Collider2D other) {
+        Debug.Log(other.tag);
+        if (other.tag == "chute") {
+            Debug.Log("Collided with the chute");
+        }
+    }
+
     void UpdateRotation() {
         if (Input.anyKey) {
             // Only need to update rotation if a key is actually being pressed
