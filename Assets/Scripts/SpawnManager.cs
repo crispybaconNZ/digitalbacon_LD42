@@ -29,4 +29,7 @@ public class SpawnManager : MonoBehaviour {
         StartCoroutine(CrateSpawnRoutine());    
     }
 
+    public void StopCrateSpawning() {
+        StopCoroutine(CrateSpawnRoutine());
+    }
 }

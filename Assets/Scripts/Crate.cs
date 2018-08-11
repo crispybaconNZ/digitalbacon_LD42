@@ -9,6 +9,7 @@ public class Crate : MonoBehaviour {
     [SerializeField] private float speed;
     private const float MIN_SPEED = 0.05f;
     private Vector3 scatterVector, scatterTarget;
+    [SerializeField] private SpawnManager spawnManager;
 
     private void OnCollisionEnter2D(Collision2D other) {
         if (other.gameObject.tag == "crate") {
@@ -17,6 +18,7 @@ public class Crate : MonoBehaviour {
             state = CrateState.Resting;
             if (gameObject.transform.position.x >= Conveyor_Belt.end) {
                 Debug.Log("GAME OVER!");
+                spawnManager.StopCrateSpawning();
             }
         }
     }
