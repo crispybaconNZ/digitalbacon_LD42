@@ -21,6 +21,12 @@ public class Crate : MonoBehaviour {
         }
     }
 
+    public void StopMoving() {
+        speed = 0.0f;
+        scatterTarget = gameObject.transform.position;
+        state = CrateState.Resting;
+    }
+
     // Update is called once per frame
     void Update () {
 	    if (state == CrateState.OnConveyorBelt) {
