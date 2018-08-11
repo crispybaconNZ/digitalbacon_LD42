@@ -78,8 +78,20 @@ public class Player : MonoBehaviour {
             x_delta *= maxSpeed;
             y_delta *= maxSpeed;
             Vector3 newPosition = this.gameObject.transform.position + new Vector3(x_delta, y_delta);
-            newPosition.x = Mathf.Clamp(newPosition.x, -8.0f, 8.0f);
-            newPosition.y = Mathf.Clamp(newPosition.y, -4.3f, 4.3f);
+            newPosition.x = Mathf.Clamp(newPosition.x, -9.5f, 9.5f);
+            newPosition.y = Mathf.Clamp(newPosition.y, -4.95f, 4.95f);
+
+            // stop player straying onto conveyor belt
+            SpriteRenderer rend = this.gameObject.GetComponent<SpriteRenderer>();
+
+            if (newPosition.x > (Conveyor_Belt.end - rend.bounds.extents.x) && newPosition.y > 1.66) {
+                newPosition = gameObject.transform.position ;  
+            }
+
+            // stop player straying into chute
+            if (newPosition.x > 5.69 && newPosition.y < -1.19) {
+                newPosition = gameObject.transform.position;
+            }
             this.gameObject.transform.position = newPosition;
         }
     }

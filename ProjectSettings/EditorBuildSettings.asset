@@ -8,3 +8,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/chainedlupine.com/LudumDareIntro/LudumDareIntro.unity
     guid: 29775c5486a68fb46b61857b62757e01
+  - enabled: 1
+    path: Assets/Scenes/Game.unity
+    guid: 82bb8442a8d8c5b4497d9d7135b7b20d

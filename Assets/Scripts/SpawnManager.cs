@@ -15,7 +15,8 @@ public class SpawnManager : MonoBehaviour {
     IEnumerator CrateSpawnRoutine() {
         while (true) {
             Vector3 actualSpawn = spawnLocation;
-            spawnLocation.y += Random.Range(-0.4f, 0.4f);
+            spawnLocation.y += Random.Range(-spawnYDeviation, spawnYDeviation);
+            Debug.Log("Spawning @ " + spawnLocation);
 
             yield return new WaitForSeconds(crate_spawn_rate);
             Quaternion rotation = Quaternion.Euler(0.0f, 0.0f, Random.Range(0.0f, 90.0f) + 45.0f);

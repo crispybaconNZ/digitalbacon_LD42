@@ -34,9 +34,11 @@ public class LudumAnimate : MonoBehaviour {
         Cursor.visible = true;
         int nextSceneIdx = SceneManager.GetActiveScene().buildIndex + 1;
 
-        if (nextSceneIdx > SceneManager.sceneCount - 1)
+        if (nextSceneIdx > SceneManager.sceneCount - 1) {
             nextSceneIdx = SceneManager.sceneCount - 1;
+        }
 
-        SceneManager.LoadScene(nextSceneIdx);
+
+        SceneManager.LoadScene("Game");
     }
 }

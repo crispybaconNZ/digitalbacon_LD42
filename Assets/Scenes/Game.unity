@@ -173,8 +173,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 12152003}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.15, y: 2.7, z: 0}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
+  m_LocalPosition: {x: -7.15, y: 4.006, z: -0.09}
+  m_LocalScale: {x: 0.6, y: 0.3449788, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -308,8 +308,9 @@ GameObject:
   m_Component:
   - component: {fileID: 261834138}
   - component: {fileID: 261834137}
-  - component: {fileID: 261834136}
   - component: {fileID: 261834135}
+  - component: {fileID: 261834136}
+  - component: {fileID: 261834139}
   m_Layer: 0
   m_Name: Conveyor_Belt
   m_TagString: Untagged
@@ -325,12 +326,12 @@ MeshRenderer:
   m_GameObject: {fileID: 261834134}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 11778178251748d48ac319c710c17d8a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -349,20 +350,31 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &261834136
-MeshCollider:
+--- !u!61 &261834136
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 261834134}
+  m_Enabled: 0
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+  m_Size: {x: 0.99999994, y: 1}
+  m_EdgeRadius: 0
 --- !u!33 &261834137
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -377,12 +389,23 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 261834134}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.12, y: 3.25, z: -1}
-  m_LocalScale: {x: 12.3625, y: 1.7875005, z: 1}
+  m_LocalPosition: {x: 2.8849, y: 3.984, z: -0.5}
+  m_LocalScale: {x: 14.544486, y: 3.4421432, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &261834139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 261834134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb637c7ec6a0b374e9e0c79caf70e231, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &934243760
 GameObject:
   m_ObjectHideFlags: 0
@@ -407,7 +430,7 @@ BoxCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 934243760}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -475,7 +498,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 934243760}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.25, y: -3.75, z: 0}
+  m_LocalPosition: {x: 8.25, y: -3.75, z: -0.09}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -551,8 +574,8 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
-  orthographic size: 5
+  orthographic: 1
+  orthographic size: 5.73
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -575,7 +598,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1699848879}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -592,6 +615,7 @@ GameObject:
   - component: {fileID: 2096767501}
   - component: {fileID: 2096767500}
   - component: {fileID: 2096767499}
+  - component: {fileID: 2096767503}
   m_Layer: 0
   m_Name: Floor_Quad
   m_TagString: Untagged
@@ -665,3 +689,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2096767503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2096767498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 977b61a767c34fb4996785b41c7a65c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crate_spawn_rate: 5
+  cratePrefab: {fileID: 1005757333671904, guid: 2a227fb4e1f42a7488de76638c992813,
+    type: 2}
+  spawnLocation: {x: 11, y: 3.6, z: -0.75}
+  spawnYDeviation: 1.2

@@ -11,11 +11,13 @@ public class Crate : MonoBehaviour {
     private Vector3 scatterVector, scatterTarget;
 
     private void OnCollisionEnter2D(Collision2D other) {
-        speed = 0.0f;
-        scatterTarget = gameObject.transform.position;
-        state = CrateState.Resting;
-        if (gameObject.transform.position.x >= Conveyor_Belt.end) {
-            Debug.Log("GAME OVER!");
+        if (other.gameObject.tag == "crate") {
+            speed = 0.0f;
+            scatterTarget = gameObject.transform.position;
+            state = CrateState.Resting;
+            if (gameObject.transform.position.x >= Conveyor_Belt.end) {
+                Debug.Log("GAME OVER!");
+            }
         }
     }
 
