@@ -6,7 +6,7 @@ public class Crate : MonoBehaviour {
     enum CrateState { OnConveyorBelt, Scattering, Resting, Carried };
     private CrateState state = CrateState.OnConveyorBelt;
     [SerializeField] private float speed;
-    private readonly float DECELERATION = 0.009f;
+    private readonly float DECELERATION = 0.005f;
     [SerializeField] public int points = 1;
 
     public SpawnManager spawnManager;
