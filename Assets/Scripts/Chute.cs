@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Chute : MonoBehaviour {
-     // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    [SerializeField] private SpawnManager spawnManager;
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        Debug.Log("Collision with chute!");
+        if (other.gameObject.tag == "crate") {
+            Crate crate = other.GetComponent<Crate>();
+            spawnManager.CrateDelivered(crate);
+        }
+        
+    }
 }

@@ -8,6 +8,7 @@ public class Player : MonoBehaviour {
     private Crate crate = null;    // potential crate to be carried
     [SerializeField] private SpawnManager spawnManager;
     private bool isCarrying;
+    [SerializeField] private GameObject chute;
 
     private readonly int[,] rotations = new int[3, 3] { 
         { 135, 180, 225 }, 
@@ -135,8 +136,9 @@ public class Player : MonoBehaviour {
                     // we're already carrying the crate, so drop it
                     crate.transform.parent = null;
                     isCarrying = false;
+                    
                 } else {
-                    // otherwise pick up the crate
+                    // otherwise pick up the crate                    
                     crate.transform.parent = this.transform;
                     isCarrying = true;
                 }
