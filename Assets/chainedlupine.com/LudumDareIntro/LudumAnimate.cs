@@ -39,6 +39,6 @@ public class LudumAnimate : MonoBehaviour {
         }
 
 
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("WelcomeScreen");
     }
 }
