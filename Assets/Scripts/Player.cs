@@ -137,7 +137,10 @@ public class Player : MonoBehaviour {
                     crate.transform.parent = null;
                     isCarrying = false;
                     bool onChute = spawnManager.chuteBounds.Contains(crate.transform.position);
-                    Debug.Log("Inside chute? " + onChute);
+                    if (onChute) {
+                        spawnManager.CrateDelivered(crate);
+                        crate = null;
+                    }
                 } else {
                     // otherwise pick up the crate                    
                     crate.transform.parent = this.transform;
