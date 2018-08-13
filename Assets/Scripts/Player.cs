@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour {
     [SerializeField] private float maxSpeed = 0.1f;
@@ -27,6 +28,7 @@ public class Player : MonoBehaviour {
         UpdateRotation();
         UpdatePosition();
         CheckForPickup();
+        CheckForExit();
     }
 
     
@@ -43,6 +45,11 @@ public class Player : MonoBehaviour {
         }
     }
   
+    private void CheckForExit() {
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            SceneManager.LoadScene("WelcomeScreen");
+        }
+    }
 
     void UpdateRotation() {
         if (Input.anyKey) {
