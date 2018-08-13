@@ -10,7 +10,9 @@ public class SpawnManager : MonoBehaviour {
     [SerializeField] private GameObject cratePrefab;
     [SerializeField] private Vector3 spawnLocation;
     [SerializeField] public Rect chuteBounds;
-    public List<Crate> crates = new List<Crate>();
+    [SerializeField] private UIManager uiManager;
+
+    private List<Crate> crates = new List<Crate>();
     Coroutine crateSpawner = null;
     private int score;
 
@@ -43,6 +45,6 @@ public class SpawnManager : MonoBehaviour {
     public void CrateDelivered(Crate crate) {   
         score += crate.points;
         Destroy(crate.gameObject);
-        Debug.Log("Crate delivered, score = " + score);
+        uiManager.SetScore(score);
     }
 }
