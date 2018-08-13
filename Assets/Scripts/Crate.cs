@@ -8,8 +8,10 @@ public class Crate : MonoBehaviour {
     [SerializeField] private float speed;
     private readonly float DECELERATION = 0.005f;
     [SerializeField] public int points = 1;
+    private AudioSource pickedUp;
 
     public SpawnManager spawnManager;
+    private UIManager uiManager;
 
     private void OnCollisionEnter2D(Collision2D other) {
         if (other.gameObject.tag == "crate") {
@@ -18,6 +20,7 @@ public class Crate : MonoBehaviour {
             if (gameObject.transform.position.x >= -3.449123 && gameObject.transform.position.y > 2.259) {
                 Debug.Log("GAME OVER!");
                 spawnManager.StopCrateSpawning();
+                uiManager.ToggleGameOverMessage();
             }
         }
     }
@@ -27,7 +30,11 @@ public class Crate : MonoBehaviour {
         state = CrateState.Resting;
     }
 
-    // Update is called once per frame
+    void Start() {
+        uiManager = GameObject.Find("UI").GetComponent<UIManager>();
+        pickedUp = GetComponent<AudioSource>();
+    }
+
     void Update () {
 	    if (state == CrateState.OnConveyorBelt) {
             gameObject.transform.Translate(Vector3.left * speed * Time.deltaTime, Space.World);
@@ -42,10 +49,12 @@ public class Crate : MonoBehaviour {
                 StopMoving();
             }
         } else {
-        }
-
-         
+        }         
 	}
+
+    public void PickedUp() {
+        pickedUp.Play();
+    }
 
     private void ScatterOntoDepositArea() {
         state = CrateState.Scattering;

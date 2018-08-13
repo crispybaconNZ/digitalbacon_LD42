@@ -9,6 +9,7 @@ public class Player : MonoBehaviour {
     [SerializeField] private SpawnManager spawnManager;
     private bool isCarrying;
     [SerializeField] private GameObject chute;
+    private AudioSource no_crate;
 
     private readonly int[,] rotations = new int[3, 3] { 
         { 135, 180, 225 }, 
@@ -18,7 +19,7 @@ public class Player : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+        no_crate = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -142,10 +143,14 @@ public class Player : MonoBehaviour {
                         crate = null;
                     }
                 } else {
-                    // otherwise pick up the crate                    
+                    // otherwise pick up the crate     
+                    crate.PickedUp();
                     crate.transform.parent = this.transform;
                     isCarrying = true;
                 }
+            } else {
+                // no crate
+                no_crate.Play();
             }
         }
     }
