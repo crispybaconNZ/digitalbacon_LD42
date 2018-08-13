@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour {
-    [SerializeField] private readonly float maxSpeed = 0.1f;
-    [SerializeField] private readonly float rotSpeed = 10.0f;
+    [SerializeField] private float maxSpeed = 0.1f;
+    [SerializeField] private float rotSpeed = 10.0f;
     private Crate crate = null;    // potential crate to be carried
     [SerializeField] private SpawnManager spawnManager;
     private bool isCarrying;
@@ -136,7 +136,8 @@ public class Player : MonoBehaviour {
                     // we're already carrying the crate, so drop it
                     crate.transform.parent = null;
                     isCarrying = false;
-                    
+                    bool onChute = spawnManager.chuteBounds.Contains(crate.transform.position);
+                    Debug.Log("Inside chute? " + onChute);
                 } else {
                     // otherwise pick up the crate                    
                     crate.transform.parent = this.transform;

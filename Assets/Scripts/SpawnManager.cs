@@ -9,7 +9,7 @@ public class SpawnManager : MonoBehaviour {
     [SerializeField] private int crate_spawn_rate = 5;    // number of seconds between box spawns
     [SerializeField] private GameObject cratePrefab;
     [SerializeField] private Vector3 spawnLocation;
-    [SerializeField] private GameObject chute;
+    [SerializeField] public Rect chuteBounds;
     public List<Crate> crates = new List<Crate>();
     Coroutine crateSpawner = null;
     private int score;

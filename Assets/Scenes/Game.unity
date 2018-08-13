@@ -157,7 +157,7 @@ SpriteRenderer:
   m_SortingLayerID: 527600077
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: bb3f9d10a30bcb44790868aa5d59b63c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c7b8857bcf44a714e8a32836bcacc252, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -174,8 +174,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 12152003}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.15, y: 4.006, z: -0.09}
-  m_LocalScale: {x: 0.6, y: 0.3449788, z: 1}
+  m_LocalPosition: {x: -7.317, y: 4.0281, z: -0.09}
+  m_LocalScale: {x: 2.4298568, y: 2.5029125, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -192,18 +192,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -5.7038884, y: 1.227385}
+  m_Offset: {x: -1.2533636, y: 0.045041323}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 10.24, y: 10.24}
+    oldSize: {x: 2.4, y: 1.4}
     newSize: {x: 10.24, y: 10.24}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.1629839, y: 12.69477}
+  m_Size: {x: 0.11213982, y: 1.5008678}
   m_EdgeRadius: 0
 --- !u!1 &171700386
 GameObject:
@@ -236,6 +236,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b32420a1d72c664e92fdc36b3414f7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxSpeed: 0.075
+  rotSpeed: 7.5
   spawnManager: {fileID: 2096767503}
   chute: {fileID: 934243760}
 --- !u!212 &171700388
@@ -780,6 +782,11 @@ MonoBehaviour:
   cratePrefab: {fileID: 1005757333671904, guid: 2a227fb4e1f42a7488de76638c992813,
     type: 2}
   spawnLocation: {x: 11, y: 3.6, z: -0.75}
-  chute: {fileID: 934243760}
+  chuteBounds:
+    serializedVersion: 2
+    x: 6.253
+    y: -5.736
+    width: 3.998
+    height: 3.978
   crates: []
   spawnYDeviation: 1.2
