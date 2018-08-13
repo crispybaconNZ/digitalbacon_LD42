@@ -1420,7 +1420,7 @@ MonoBehaviour:
     width: 3.998
     height: 3.978
   uiManager: {fileID: 1107470065}
-  spawnYDeviation: 1.2
+  spawnYDeviation: 1.1
 --- !u!82 &2096767504
 AudioSource:
   m_ObjectHideFlags: 0
