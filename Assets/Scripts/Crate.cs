@@ -18,9 +18,8 @@ public class Crate : MonoBehaviour {
             speed = 0.0f;            
             state = CrateState.Resting;
             if (gameObject.transform.position.x >= -3.449123 && gameObject.transform.position.y > 2.259) {
-                Debug.Log("GAME OVER!");
                 spawnManager.StopCrateSpawning();
-                uiManager.ToggleGameOverMessage();
+                uiManager.ShowGameOverMessage();
             }
         }
     }

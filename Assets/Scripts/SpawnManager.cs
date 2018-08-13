@@ -11,8 +11,7 @@ public class SpawnManager : MonoBehaviour {
     [SerializeField] private Vector3 spawnLocation;
     [SerializeField] public Rect chuteBounds;
     [SerializeField] private UIManager uiManager;
-    private AudioSource pointScored, gameOver;
-
+    private AudioSource pointScored, music;
     private List<Crate> crates = new List<Crate>();
     Coroutine crateSpawner = null;
     private int score;
@@ -39,14 +38,13 @@ public class SpawnManager : MonoBehaviour {
         AudioSource[] audioSources = GetComponents<AudioSource>();
 
         pointScored = audioSources[0];
-        gameOver = audioSources[1];
-
+        music = audioSources[1];        
         score = 0;
     }
 
     public void StopCrateSpawning() {
         StopCoroutine(crateSpawner);
-        gameOver.Play();
+        music.Stop();
     }
 
     public void CrateDelivered(Crate crate) {

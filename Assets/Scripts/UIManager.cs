@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour {
     private Text scoreText, scoreTextShadow;
     private Text gameOverMessage, gameOverMessageShadow;
+    private AudioSource gameOver;
 
 	// Use this for initialization
 	void Start () {
@@ -13,7 +14,8 @@ public class UIManager : MonoBehaviour {
         scoreTextShadow = GameObject.Find("Score_Shadow").GetComponent<Text>();
         gameOverMessage = GameObject.Find("Game_Over_Message").GetComponent<Text>();
         gameOverMessageShadow = GameObject.Find("Game_Over_Message_Shadow").GetComponent<Text>();
-        ToggleGameOverMessage();
+        HideGameOverMessage();
+        gameOver = GetComponent<AudioSource>();
     }
 
 	public void SetScore(int score) {
@@ -22,9 +24,21 @@ public class UIManager : MonoBehaviour {
         scoreTextShadow.text = text;
     }
 
-    public void ToggleGameOverMessage() {
-        gameOverMessage.enabled = !gameOverMessage.enabled;
-        gameOverMessageShadow.enabled = !gameOverMessageShadow.enabled;
+    public void HideGameOverMessage() {
+        gameOverMessage.enabled = false;
+        gameOverMessageShadow.enabled = false;
+        if (gameOver == null) {
+            gameOver = GetComponent<AudioSource>();
+        }
+    }
+
+    public void ShowGameOverMessage() {
+        gameOverMessage.enabled = true;
+        gameOverMessageShadow.enabled = true;
+        if (gameOver != null) {
+            gameOver.Play();
+            gameOver = null;    // only play it once
+        }
     }
 }
     
