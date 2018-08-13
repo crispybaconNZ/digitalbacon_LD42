@@ -21,7 +21,7 @@ public class SpawnManager : MonoBehaviour {
 
     IEnumerator CrateSpawnRoutine() {
         while (true) {
-            yield return new WaitForSeconds(crate_spawn_rate);
+            yield return new WaitForSeconds(Random.Range(3.0f, 7.0f));
 
             Vector3 actualSpawn = spawnLocation;
             actualSpawn.y += Random.Range(-spawnYDeviation, spawnYDeviation);
@@ -30,6 +30,14 @@ public class SpawnManager : MonoBehaviour {
             Crate newCrate = Instantiate(cratePrefab, actualSpawn, rotation).GetComponent<Crate>();
             newCrate.spawnManager = this;
             crates.Add(newCrate);
+        }
+    }
+
+    public void SetMusicPlayer(bool on = true) {
+        if (on) {
+            music.Play();        
+        } else {
+            music.Stop();
         }
     }
 
@@ -44,7 +52,7 @@ public class SpawnManager : MonoBehaviour {
 
     public void StopCrateSpawning() {
         StopCoroutine(crateSpawner);
-        music.Stop();
+        SetMusicPlayer(false);
     }
 
     public void CrateDelivered(Crate crate) {
