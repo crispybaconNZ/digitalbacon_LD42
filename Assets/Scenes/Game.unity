@@ -119,7 +119,7 @@ GameObject:
   - component: {fileID: 12152004}
   - component: {fileID: 12152006}
   m_Layer: 8
-  m_Name: deposit
+  m_Name: Delivery_Zone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -724,7 +724,7 @@ GameObject:
   - component: {fileID: 934243764}
   - component: {fileID: 934243761}
   m_Layer: 0
-  m_Name: chute
+  m_Name: Chute
   m_TagString: chute
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
